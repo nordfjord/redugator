@@ -2,9 +2,48 @@
 
 This library helps you create [crossfilter](https://github.com/crossfilter/crossfilter) reduce functions.
 
+# Motivation
+
+The best helpers available for crossfilter at the moment are hard to extend. They
+rely on complicated internals in order to do reductions. This library is structured
+to make sure you can extend it and those extensions will be just as natural as
+a first class reducer from the library.
+
+Take for example the sum reducer:
+
+```js
+export function sum(valueAccessor, key = 'sum') {
+  return {
+    reduceAdd(p, v) {
+      p[key] += valueAccessor(v)
+      return p
+    },
+    reduceRemove(p, v) {
+      p[key] -= valueAccessor(v)
+      return p
+    },
+    reduceInitial(p = {}) {
+      p[key] = 0
+      return p
+    },
+  }
+}
+```
+
+that's all there is to it.
+
+Because we treat reducers as composable pieces we can implement a count reducer in
+terms of a sum reducer.
+
+```js
+const count = (key = 'count') => sum(() => 1, key)
+```
+
+So how do we compose these reducers together?
+
 # Reducer
 
-The main utility of this library is a helper that allows you to compose reducers together.
+This library exposes a helper for composing reducers together
 
 ## Reducer.concat(reducer1, reducer2)
 

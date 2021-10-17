@@ -1,6 +1,6 @@
 import { test } from 'uvu'
 import * as assert from 'uvu/assert'
-import { sum } from '../src/sum.js'
+import { sum } from '../reducers/index.js'
 
 test('summing', () => {
   const reducer = sum(x => x.count)

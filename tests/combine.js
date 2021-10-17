@@ -1,8 +1,7 @@
 import { test } from 'uvu'
 import * as assert from 'uvu/assert'
-import { max } from '../src/max.js'
-import { combineReducers } from '../src/combine-reducers.js'
-import { sum } from '../src/sum.js'
+import { max, sum } from '../reducers/index.js'
+import { combineReducers } from '../reducers/combine-reducers.js'
 
 test('max', () => {
   const reducer = combineReducers({

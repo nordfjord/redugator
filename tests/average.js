@@ -1,8 +1,7 @@
 import { test } from 'uvu'
 import * as assert from 'uvu/assert'
-import { Reducer } from '../src/index.js'
-import { average } from '../src/average.js'
-import { sum } from '../src/sum.js'
+import { Reducer } from '../index.js'
+import { average, sum } from '../reducers/index.js'
 
 test('Averaging', () => {
   const reducer = Reducer.concatAll(

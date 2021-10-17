@@ -1,11 +1,8 @@
 import { test } from 'uvu'
 import * as assert from 'uvu/assert'
-import { groupBy } from '../src/group-by.js'
-import { Reducer } from '../src/index.js'
-import { sum } from '../src/sum.js'
-import { average } from '../src/average.js'
-import { splitBy } from '../src/split-by.js'
-import { combineReducers } from '../src/combine-reducers.js'
+import { sum, groupBy, average, splitBy } from '../reducers/index.js'
+import { Reducer } from '../index.js'
+import { combineReducers } from '../reducers/combine-reducers.js'
 import crossfilter from 'crossfilter2'
 
 const setupCrossfilter = () => {

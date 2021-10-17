@@ -1,4 +1,4 @@
-import { Reducer } from './index.js'
+import { Reducer } from '../index.js'
 import { valueList } from './value-list.js'
 
 const last = l => l[l.length - 1]

@@ -1,7 +1,6 @@
 import { test } from 'uvu'
 import * as assert from 'uvu/assert'
-import { groupBy } from '../src/group-by.js'
-import { sum } from '../src/sum.js'
+import { groupBy, sum } from '../reducers/index.js'
 
 test('summing', () => {
   const reducer = groupBy(

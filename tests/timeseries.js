@@ -1,7 +1,6 @@
 import { test } from 'uvu'
 import * as assert from 'uvu/assert'
-import { sum } from '../src/sum.js'
-import { splitBy } from '../src/split-by.js'
+import { splitBy, sum } from '../reducers/index.js'
 
 test('timeseries', () => {
   const reducer = splitBy(

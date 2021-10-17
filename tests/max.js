@@ -1,6 +1,6 @@
 import { test } from 'uvu'
 import * as assert from 'uvu/assert'
-import { max } from '../src/max.js'
+import { max } from '../reducers/index.js'
 
 test('max', () => {
   const reducer = max(x => x.count)
