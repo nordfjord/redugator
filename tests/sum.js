@@ -1,10 +1,9 @@
 import { test } from 'uvu'
 import * as assert from 'uvu/assert'
-import { reduceId } from '../create-reducer.js'
-import { reduceSum } from '../reduce-sum.js'
+import { sum } from '../src/sum.js'
 
 test('summing', () => {
-  const reducer = reduceSum(x => x.count)(reduceId())
+  const reducer = sum(x => x.count)
   let state = reducer.reduceInitial({})
   reducer.reduceAdd(state, { count: 1 })
   reducer.reduceAdd(state, { count: 1 })

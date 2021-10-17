@@ -1,13 +1,12 @@
 import { test } from 'uvu'
 import * as assert from 'uvu/assert'
-import { createReducer, reduceId } from '../create-reducer.js'
-import { reduceKey } from '../reduce-key.js'
-import { reduceSum } from '../reduce-sum.js'
+import { groupBy } from '../src/group-by.js'
+import { sum } from '../src/sum.js'
 
 test('summing', () => {
-  const reducer = createReducer(
-    reduceKey(x => x.key),
-    reduceSum(x => x.count)
+  const reducer = groupBy(
+    x => x.key,
+    sum(x => x.count)
   )
   let state = reducer.reduceInitial({})
   reducer.reduceAdd(state, { count: 1, key: '1' })

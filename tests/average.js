@@ -1,14 +1,14 @@
 import { test } from 'uvu'
 import * as assert from 'uvu/assert'
-import { createReducer } from '../create-reducer.js'
-import { reduceAverage } from '../reduce-average.js'
-import { reduceSum } from '../reduce-sum.js'
+import { Reducer } from '../src/index.js'
+import { average } from '../src/average.js'
+import { sum } from '../src/sum.js'
 
 test('Averaging', () => {
-  const reducer = createReducer(
-    reduceSum(x => x.count, 'count'),
-    reduceSum(x => x.sum, 'sum'),
-    reduceAverage()
+  const reducer = Reducer.concatAll(
+    sum(x => x.count, 'count'),
+    sum(x => x.sum, 'sum'),
+    average()
   )
   let state = reducer.reduceInitial({})
 

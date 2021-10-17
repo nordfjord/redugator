@@ -1,13 +1,12 @@
 import { test } from 'uvu'
 import * as assert from 'uvu/assert'
-import { createReducer } from '../create-reducer.js'
-import { reduceSum } from '../reduce-sum.js'
-import { reduceTimeseries } from '../reduce-timeseries.js'
+import { sum } from '../src/sum.js'
+import { splitBy } from '../src/split-by.js'
 
-test('summing', () => {
-  const reducer = createReducer(
-    reduceTimeseries(x => x.key),
-    reduceSum(x => x.count)
+test('timeseries', () => {
+  const reducer = splitBy(
+    x => x.key,
+    sum(x => x.count)
   )
   let state = reducer.reduceInitial({})
   reducer.reduceAdd(state, { count: 1, key: 1 })
