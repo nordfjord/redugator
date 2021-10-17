@@ -2,6 +2,14 @@
 
 This library helps you create [crossfilter](https://github.com/crossfilter/crossfilter) reduce functions.
 
+# Installation
+
+```sh
+npm i -S redugator
+# Or
+yarn add redugator
+```
+
 # Motivation
 
 The best helpers available for crossfilter at the moment are hard to extend. They
