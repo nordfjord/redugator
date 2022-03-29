@@ -35,7 +35,9 @@ declare module 'redugator' {
       r5: Reducer<S5, V>
     ): Reducer<S1 & S2 & S3 & S4 & S5, V>
     concatAll<S, V>(...reducers: Reducer<any, V>[]): Reducer<S, V>
-    reduceGroup<R>(g: {
+    reduceGroup<R>(
+      reducer: Reducer<any, any>,
+      g: {
       reduce: (
         reduceAdd: reduceFn<any, any>,
         reduceRemove: reduceFn<any, any>,
