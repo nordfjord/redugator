@@ -77,6 +77,16 @@ declare module 'redugator/reducers' {
     key?: K
   ) => Reducer<Record<K, number> & Record<`${K}_valuelist`, R[]>, V>
 
+  export const min: <
+    V,
+    R extends number | Date | string | boolean,
+    K extends string = 'min'
+  >(
+    valueAccessor: (value: V) => R,
+    key?: K
+  ) => Reducer<Record<K, number> & Record<`${K}_valuelist`, R[]>, V>
+
+
   export const groupBy: <V, T>(
     keyAccessor: (value: V) => string,
     inner: Reducer<T, V>
