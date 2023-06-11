@@ -1,6 +1,6 @@
 {
   "name": "redugator",
-  "version": "0.0.1-rc3",
+  "version": "0.1.0",
   "description": "A library for creating reducers for crossfilter",
   "main": "index.js",
   "sideEffects": false,
